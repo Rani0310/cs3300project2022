@@ -29,6 +29,11 @@
   cursor: pointer;
 }
 
+h1 {
+
+color: red;
+}
+
 </style>
 
 
@@ -45,8 +50,11 @@
 <%= render @project %>
 
 <div>
-  <p class = button><%= link_to "Edit this project", edit_project_path(@project) %></p>
+
+<%= button_to "Destroy this project", @project, method: :delete %>
+
+  <p class = button><%= link_to "Edit this project", edit_project_path(@project) %></p><br>
   <p class = button><%= link_to "Back to projects", projects_path %></p>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
+  
 </div>

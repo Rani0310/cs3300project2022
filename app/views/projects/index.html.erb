@@ -1,6 +1,52 @@
+<style>
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #97d1e3
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #8134d8;
+  color: black;
+}
+
+/* button class */
+.button {
+  color:white;
+  background-color: #6f7e83;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+h1 {
+
+  font-size:48px;
+}
+
+</style>
+
+
+<div class="topnav">
+  <a>Home</a>
+  
+  <a>Account</a>
+</div>
+
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1><br><br>Projects</h1>
 
 <div id="projects">
   <% @projects.each do |project| %>

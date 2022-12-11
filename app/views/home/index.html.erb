@@ -1,4 +1,63 @@
 <!DOCTYPE html>
+
+<style>
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #97d1e3
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #8134d8;
+  color: black;
+}
+
+body {
+
+  background-color: #a4a4a4;
+
+}
+
+.button {
+
+  background-color: #4f5bdf;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropdown {
+
+  display:inline-block;
+  position: relative;
+
+
+}
+
+.dropdown-options {
+
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+
+  display: block;
+}
+
+</style>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -8,24 +67,61 @@
 
   </head>
   
-  <body>
-    <div style="margin: 5% 0 0 10%;">
-    <h1>Projects</h1>   
-    <h1>CS 3300 Portfolio Project - Fall 2022</h1>
 
-      <div style="padding-left: 2rem;">
-        <h3 style="color: blue"> Andy Bell </h3>
+
+
+  <body>
+    <div>
+
         
 
         <!--- Explain what the block of code below this line is doing --->
 
         <% if user_signed_in? %>
+
+        <div class="topnav">
+        <%= link_to "Home", root_path %>
+        <div class = "dropdown">
+        <a class = topnav> Account </a>
+          <div class = "dropdown-options">
+          <a class = "button"><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
+            <a> Sign Up</a>
+          </div>
+        </div>
+        <%= link_to "View Projects", projects_url %>
+      </div>
+
+
+          <h1><br><br>CS 3300 Portfolio Project - Fall 2022</h1>
+
+            <div style="padding-left: 2rem;">
+            <h3 style="color: blue"> Andy Bell </h3>
           
-          <div> Welcome <%= current_user.email %> </div>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-        
+              <div> Welcome <%= current_user.email %> </div>
+             
+              <p> <%= button_to "Sign out", destroy_user_session_path, method: :delete %> </p>
+          
+      
         <% else %>
-          <a href="/users/sign_in"> Sign in</a>
+
+        <div class="topnav">
+        <%= link_to "Home", root_path %>
+        <div class = "dropdown">
+        <a class = topnav> Account </a>
+          <div class = "dropdown-options">
+            <a href="/users/sign_in"> Sign in</a>
+            <a> Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+        <h1><br><br>CS 3300 Portfolio Project - Fall 2022</h1>
+
+        <div style="padding-left: 2rem;">
+          <h3 style="color: blue"> Andy Bell </h3>
+
+
+        
         <% end %>
 
       </div>

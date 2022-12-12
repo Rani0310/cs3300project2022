@@ -1,3 +1,80 @@
+<style>
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #97d1e3
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #8134d8;
+  color: black;
+}
+
+body {
+
+  background-color: #a4a4a4;
+
+}
+
+.button {
+
+  background-color: #4f5bdf;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropdown {
+
+  display:inline-block;
+  position: relative;
+
+
+}
+
+.dropdown-options {
+
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+
+  display: block;
+}
+
+h2{
+
+  color: red;
+}
+
+</style>
+
+
+<div class="topnav">
+<%= link_to "Home", root_path %>
+<div class = "dropdown">
+<a class = topnav> Account </a>
+  <div class = "dropdown-options">
+  <a ><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
+  
+  </div>
+</div>
+<%= link_to "Projects", projects_url %>
+</div>
+
+
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -9,8 +86,11 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class = button>
+    <%= f.submit "Send me reset password instructions" %></div>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+
+<a href="/users/sign_in" class = button> Log In</a><br>
+<a href ="/users/sign_up" class = button> Sign Up</a>

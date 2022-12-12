@@ -17,10 +17,15 @@
   color: black;
 }
 
-/* button class */
+body {
+
+  background-color: #a4a4a4;
+
+}
+
 .button {
-  color:white;
-  background-color: #6f7e83;
+
+  background-color: #4f5bdf;
   padding: 15px 32px;
   text-align: center;
   display: inline-block;
@@ -28,6 +33,27 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.dropdown {
+
+  display:inline-block;
+  position: relative;
+
+
+}
+
+.dropdown-options {
+
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+
+  display: block;
+}
+
 
 h1 {
 
@@ -38,22 +64,29 @@ h1 {
 
 
 <div class="topnav">
-  <%= link_to "Home", root_path %>
-  <a>Account</a>
+<%= link_to "Home", root_path %>
+<div class = "dropdown">
+<a class = topnav> Account </a>
+  <div class = "dropdown-options">
+  <a ><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
+  
+  </div>
+</div>
+<%= link_to "Projects", projects_url %>
 </div>
 
 
 <p style="color: green"><%= notice %></p>
 
-<h1><br><br>Projects</h1>
+<h1>Projects</h1>
 
 <div id="projects">
   <% @projects.each do |project| %>
     <%= render project %>
-    <p>
+    <p class = button>
       <%= link_to "Show this project", project %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New project", new_project_path %>
+<div class=button><%= link_to "New project", new_project_path %></div>

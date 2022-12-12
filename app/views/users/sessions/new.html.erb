@@ -1,4 +1,68 @@
-<h2>Log in</h2>
+<style>
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #97d1e3
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #8134d8;
+  color: black;
+}
+
+body {
+
+  background-color: #a4a4a4;
+
+}
+
+.button {
+
+  background-color: #4f5bdf;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropdown {
+
+  display:inline-block;
+  position: relative;
+
+
+}
+
+.dropdown-options {
+
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+
+  display: block;
+}
+
+</style>
+
+<div class="topnav">
+<%= link_to "Home", root_path %>
+
+</div>
+
+
+<h2><br><br><br>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -19,8 +83,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+  <a class = button><%= f.submit "Log in" %></a>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<a href ="/users/sign_up" class = button> Sign Up</a>
+<br><a href = "/users/password/new" class=button> Forgot your password?</a>
+
+

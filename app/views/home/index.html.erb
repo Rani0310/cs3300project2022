@@ -84,8 +84,8 @@ body {
         <div class = "dropdown">
         <a class = topnav> Account </a>
           <div class = "dropdown-options">
-          <a class = "button"><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
-            <a> Sign Up</a>
+          <a ><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
+          
           </div>
         </div>
         <%= link_to "View Projects", projects_url %>
@@ -99,7 +99,7 @@ body {
           
               <div> Welcome <%= current_user.email %> </div>
              
-              <p> <%= button_to "Sign out", destroy_user_session_path, method: :delete %> </p>
+            
           
       
         <% else %>
@@ -109,8 +109,8 @@ body {
         <div class = "dropdown">
         <a class = topnav> Account </a>
           <div class = "dropdown-options">
-            <a href="/users/sign_in"> Sign in</a>
-            <a> Sign Up</a>
+            <a href="/users/sign_in"> Sign In</a>
+            <a href ="/users/sign_up"> Sign Up</a>
           </div>
         </div>
       </div>
@@ -120,8 +120,6 @@ body {
         <div style="padding-left: 2rem;">
           <h3 style="color: blue"> Andy Bell </h3>
 
-
-        
         <% end %>
 
       </div>
